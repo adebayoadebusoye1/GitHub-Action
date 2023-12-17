@@ -5,7 +5,7 @@ on:
       ec2_name:
         description: EC2 name
         required: true
-        default: 'Devops-techstack'
+        default: 'Adebayo_github_action'
         type: string
 jobs:
   provision-ec2:
@@ -18,9 +18,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: '${{ secrets.TF_USER_AWS_KEY }}'
-          aws-secret-access-key: '${{ secrets.TF_USER_AWS_SECRET }}'
-          aws-region: us-east-2
+          aws-access-key-id: '${{ secrets.ACCESS_KEY }}'
+          aws-secret-access-key: '${{ secrets.SECRET_ACCESS_KEY }}'
+          aws-region: us-east-1
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
